@@ -9,7 +9,7 @@ sudo apt-get install python3 pip
 
 pip install virtualenv
 
-sudo apt-get install python-dev libpq-dev postgresql postgresql-contrib
+sudo apt-get install python3-dev libpq-dev postgresql postgresql-contrib
 
 # Windows 
 
