@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
+from gec.views import home_page, SignUpView, LoginView, LogOutView
 
 urlpatterns = [
+    url(r'^$', home_page, name='home'),
+    url(r'^accounts/register/$', SignUpView.as_view(), name='signup'),
+    url(r'^accounts/login/$', LoginView.as_view(), name='login'),
+    url(r'^accounts/logout/$', LogOutView.as_view(), name='logout'),
     url(r'^admin/', admin.site.urls),
 ]
+
+admin.site.site_title = _('GEC Admin')
+admin.site.site_header = _('GEC Administration')
+admin.site.index_title = _('GEC Administration')
